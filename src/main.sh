@@ -1,5 +1,14 @@
 #!/bin/bash
 
+
+mkdir -p ~/.terraform.d/plugins
+cd ~/.terraform.d/plugins;
+wget https://github.com/OctopusDeploy/terraform-provider-octopusdeploy/releases/download/v0.5.0/terraform-provider-octopusdeploy_linux_386_v0.5.0.zip
+unzip terraform-provider-octopusdeploy_linux_386_v0.5.0.zip
+mv terraform-provider-octopusdeploy_linux_386_v0.5.0 ~/.terraform.d/plugins/terraform-provider-octopusdeploy_v0.5.0
+unlink terraform-provider-octopusdeploy_linux_386_v0.5.0.zip
+
+
 function stripColors {
   echo "${1}" | sed 's/\x1b\[[0-9;]*m//g'
 }
